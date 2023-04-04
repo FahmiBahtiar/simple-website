@@ -1,0 +1,90 @@
+* {
+    font-family: 'Open Sans', sans-serif;
+    transition: all 0.3s;
+    letter-spacing: 0.1em;
+}
+
+body,
+.navbar {
+    background: #9C835F!important;
+}
+
+.img-batu {
+    width: 128px;
+    height: 92px;
+}
+
+.img-kertas {
+    width: 115px;
+    height: 150px;
+}
+
+.img-gunting {
+    width: 134px;
+    height: 160px;
+}
+
+.row {
+    margin-top: 2rem!important;
+}
+
+.icon {
+    cursor: pointer;
+}
+
+.rps {
+    padding: 1rem;
+}
+
+.selected {
+    background-color: #C4C4C4;
+    border-radius: 10px;
+}
+
+.player-text {
+    font-weight: bold;
+    color: black;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.img-refresh {
+    width: 77px;
+    height: 71px;
+}
+
+.vs-text {
+    color: #BD0000;
+    font-size: 7rem;
+    font-weight: bold;
+}
+
+.win-text {
+    background: #4C9654;
+}
+
+.draw-text {
+    background: #035B0C;
+}
+
+.text-style {
+    width: 14.3rem;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    padding: 2rem;
+    border-radius: 10px;
+    font-size: 1.8rem;
+    transform: rotate(-28.87deg);
+}
+
+.nav-title {
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    color: #F9B23D!important;
+    font-weight: bold;
+}
+
+.nav-title:hover {
+    color: #F9B23D!important;
+}

@@ -1,0 +1,117 @@
+* {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+.home-section-navbar {
+    width: 100%;
+    height: 960px;
+    background-image: radial-gradient(60.96% 50.18% at 50% 43.82%, rgba(255, 181, 72, 0) 0%, rgba(52, 44, 29, 0.80319) 20.22%, #08090A 99.74%), url('images/bg\ image\ 1.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    position: relative;
+}
+
+.nav-container {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px;
+    color: #fff;
+    /* background-color: darkgray; */
+
+}
+
+.nav-links a {
+    color: #fff;
+}
+
+.logo {
+    font-size: 30px;
+    margin-right: 35rem;
+}
+
+.menu {
+    display: flex;
+    gap: 30px;
+    font-size: 20px;
+}
+
+.menu li:hover {
+    background-color: #F3AF34;
+    border-radius: 5px;
+    transition: 0.3s ease;
+}
+
+.menu li {
+    padding: 5px 14px;
+}
+
+.buttoncr {
+    font-size: 17;
+    border-radius: 5px;
+    border: 0px 1px;
+    padding: 5px;
+    background-color: #F3AF34;
+    box-shadow: 4px 3px 0px 0px #fbdc9d;
+    text-shadow: 1px 0px 0px;
+}
+
+.buttoncr:hover {
+    background-color: #F3AF34;
+    border-radius: 5px;
+    transition: 0.6s ease;
+    box-shadow: none;
+    border-color: #F3AF34;
+}
+
+
+/* Position text in the top-left corner */
+.topleft {
+  position: absolute;
+  top: 0;
+  left: 16px;
+}
+
+/* Position text in the bottom-left corner */
+.bottomleft {
+  position: absolute;
+  bottom: 0;
+  left: 16px;
+}
+
+/* Position text in the middle */
+.middle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-size: 50px;
+  color: gold;
+}
+
+/* Style the <hr> element */
+hr {
+  margin: auto;
+  width: 70%;
+}
+
