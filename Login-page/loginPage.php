@@ -1,79 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
+<!-- Coding by CodingLab | www.codinglabweb.com-->
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--<title> Responsive Login and Signup Form </title>-->
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+        <!-- CSS -->
+        <link rel="stylesheet" href="login.css">
+                
+        <!-- Boxicons CSS -->
+        <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+                        
+    </head>
+    <body>
+        <section class="container forms">
+            <div class="form login">
+                <div class="form-content">
+                    <header>Login</header>
+                    <form action="loginController.php" method="post">
 
-    <title>Document</title>
-</head>
+                        <div class="field input-field">
+                            <input type="username" placeholder="username" class="input" name="username" required>
+                        </div>
 
-<body>
-    <div class="overlay">
-        <!-- LOGN IN FORM by Omar Dsoky -->
-        <form action="loginController.php" method="post">
-            <!--   con = Container  for items in the form-->
-            <div class="con">
-                <!--     Start  header Content  -->
-                <header class="head-form">
-                    <h2>Log In</h2>
-                    <!--     A welcome message or an explanation of the login form -->
-                    <p>login here using your username and password</p>
-                </header>
-                <!--     End  header Content  -->
-                <br>
-                <div class="field-set">
+                        <div class="field input-field">
+                            <input type="password" placeholder="Password" class="password" name="password" required>
+                            <i class='bx bx-hide eye-icon'></i>
+                        </div>
 
-                    <!--   user name -->
-                    <span class="input-item">
-                        <i class="fa fa-user-circle"></i>
-                    </span>
-                    <!--   user name Input-->
-                    <input class="form-input" name="username"  id="txt-input" type="text" placeholder="@UserName" required>
+                        <div class="form-link">
+                            <a href="#" class="forgot-pass">Forgot password?</a>
+                        </div>
 
-                    <br>
-
-                    <!--   Password -->
-
-                    <span class="input-item">
-                        <i class="fa fa-key"></i>
-                    </span>
-                    <!--   Password Input-->
-                    <input class="form-input" type="password" placeholder="Password" id="pwd" name="password" required>
-
-                    <!--      Show/hide password  -->
-                    <span>
-                        <i class="fa fa-eye"  aria-hidden="true" type="button" id="eye"></i>
-                    </span>
+                        <div class="field button-field">
+                            <button type="submit" name="submit">Login</button>
+                        </div>
+                    </form>
 
 
-                    <br>
-                    <!--        buttons -->
-                    <!--      button LogIn -->
-                    <button type="submit" name="submit" class="log-in"> Log In </button>
                 </div>
 
-                <!--   other buttons -->
-                <div class="other">
-                    <!--      Forgot Password button-->
-                    <button class="btn submits frgt-pass">Forgot Password</button>
-                    <!--     Sign Up button -->
-                    <button class="btn submits sign-up">Sign Up
-                        <!--         Sign Up font icon -->
-                        <i class="fa fa-user-plus" aria-hidden="true"></i>
-                    </button>
-                    <!--      End Other the Division -->
+                <div class="line"></div>
+
+                <div class="media-options">
+                    <a href="../Register-page/registerPage.php" class="field facebook">
+                        <i class='bx bxl-facebook facebook-icon'></i>
+                        <span>REGISTER</span>
+                    </a>
                 </div>
 
-                <!--   End Conrainer  -->
             </div>
 
-            <!-- End Form -->
-        </form>
-    </div>
-    <script src="script.js"></script>
-</body>
 
+        </section>
+
+        <!-- JavaScript -->
+        <script src="login.js"></script>
+    </body>
 </html>

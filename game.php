@@ -1,7 +1,15 @@
 <?php
+include "./config/koneksi.php";
+
 session_start();
-if (!isset($_SESSION['username'])) {
-  header("Location:logout.php");
+
+// Cek apakah user sudah login atau belum
+if(isset($_SESSION['username'])) {
+    $username = $_SESSION['username'];
+} else {
+    // Jika belum, redirect ke halaman login
+    header('Location: ./Login-page/loginPage.php');
+    exit;
 }
 ?>
 <!DOCTYPE html>

@@ -1,3 +1,16 @@
+<?php include "../config/koneksi.php"; ?>
+
+<?php
+session_start();
+$loggedin = false;
+
+// Check if the user is already logged in, if yes then redirect him to welcome page
+if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
+   $loggedin = true;
+    
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,7 +38,8 @@
                         <li><a href="#">Home</a></li>
                         <li><a href="../About-page/about.html">About</a></li>
                         <li><a href="https://sociabuzz.com/blimbing/tribe">Donation</a></li>
-                        <a href="../game.php"><button class="buttoncr"> Game Suit </button></a>
+                        <a href="<?= ($loggedin) ? '../logout.php' : '../Login-page/loginPage.php'; ?>">
+                            <button class="buttoncr"> <?= ($loggedin) ? 'Logout' : 'Sign in'; ?></button></a>
                     </div>
                 </ul>
             </div>
@@ -196,7 +210,9 @@
     </footer>
 
 
-
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 
 
 </body>
