@@ -24,7 +24,7 @@ li {
 .home-section-navbar {
     width: 100%;
     height: 960px;
-    background-image: radial-gradient(189.96% 61.18% at 50% 38.82%, rgba(255, 181, 72, 0) 0%, rgba(52, 44, 29, 0.80319) 73.22%, #08090A 99.74%), url('../images/bg\ image\ 1.png');
+    background-image: radial-gradient(189.96% 61.18% at 50% 38.82%, rgba(255, 181, 72, 0) 0%, rgba(52, 44, 29, 0.80319) 73.22%, #08090A 99.74%), url('./images/bg\ image\ 1.png');
     background-repeat: no-repeat;
     background-size: cover;
     color: white;
@@ -92,6 +92,8 @@ li {
 }
 
 
+
+/* home */
 .home-section {
     align-items: center;
     text-align: center;
@@ -142,7 +144,7 @@ li {
     margin-top: -5px;
     height: 920px;
     width: 100%;
-    background-image: radial-gradient(70.1% 50.48% at 40.85% 40.65%, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0) 19.2%, rgba(4, 5, 6, 0.520671) 47.48%, #080A0B 99.74%), url(../images/bg\ image\ 3.png);
+    background-image: radial-gradient(70.1% 50.48% at 40.85% 40.65%, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0) 19.2%, rgba(4, 5, 6, 0.520671) 47.48%, #080A0B 99.74%), url(./images/bg\ image\ 3.png);
     background-repeat: no-repeat;
     background-size: cover;
     color: white;
@@ -215,7 +217,7 @@ li.timeline-is-active::before {
     margin-top: -1px;
     height: 1000px;
     width: 100%;
-    background-image: radial-gradient(43.26% 45% at 57.1%, rgba(255, 255, 255, 0) 3.36%, rgba(0, 0, 0, 0) 19.22%, #080A0B 99.74%), url(../images/bg\ image\ 4.png);
+    background-image: radial-gradient(43.26% 45% at 57.1%, rgba(255, 255, 255, 0) 3.36%, rgba(0, 0, 0, 0) 19.22%, #080A0B 99.74%), url(./images/bg\ image\ 4.png);
     background-repeat: no-repeat;
     background-size: cover;
     color: white;
@@ -273,7 +275,7 @@ li.timeline-is-active::before {
 }
 
 .subscription-image {
-    background: radial-gradient(45.43% 53.19% at 50% 50%, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0) 46.15%, #080A0B 99.74%), url(../images/bg\ image\ 5.png);
+    background: radial-gradient(45.43% 53.19% at 50% 50%, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0) 46.15%, #080A0B 99.74%), url(./images/bg\ image\ 5.png);
     background-position: center;
     width: 445.47px;
     height: 694.41px;
@@ -443,7 +445,7 @@ footer {
     position: relative;
 }
 
-.footer-container {
+.footer-containers {
     margin-right: 10%;
     margin-left: 10%;
 
@@ -495,13 +497,14 @@ svg:hover {
 
 
 
-footer hr {
+.footer-containers hr {
     background-color: white;
-    display: grid;
+    display: block;
 }
 
-.footer-copyright {
+.footer-copyrights {
     opacity: 0.5;
+    text-align: center;
 }
 
 .scroll-container {

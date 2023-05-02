@@ -30,7 +30,7 @@ if ($conn) {
                 insertToDB($conn, $type, $data);
 
                 // Go to show.php
-                header("Location: listArticle", true, 301);
+                header("Location: listArticle.php", true, 301);
                 exit;
                 break;
 

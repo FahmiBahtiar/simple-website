@@ -1,7 +1,6 @@
-<!-- Include Head -->
 <?php
-include "../config/koneksi.php";
-
+include "../config/koneksi.php";?>
+<?php
 $stmt = $conn->prepare("SELECT category_id, category_name FROM category");
 $stmt->execute();
 $categories = $stmt->fetchAll();
@@ -10,7 +9,21 @@ $stmt = $conn->prepare("SELECT author_id, author_fullname FROM author");
 $stmt->execute();
 $authors = $stmt->fetchAll();
 
+if(!isset($_SESSION)) 
+{ 
+    session_start(); 
+} 
+
+// Cek apakah user sudah login atau belum
+if (isset($_SESSION['username'])) {
+    $username = $_SESSION['username'];
+} else {
+    header('Location: ../login-page/loginPage.php');
+    exit;
+}
+
 ?>
+
 
 <!-- JS TextEditor -->
 <script src="//cdn.ckeditor.com/4.13.1/standard/ckeditor.js"></script>

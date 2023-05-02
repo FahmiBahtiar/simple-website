@@ -106,7 +106,7 @@ for (var i = 0; i < grid.length; i++) {
 }
 
 function goToHome() {
-    window.location.href = 'Main-page';
+    window.location.href = '../';
 }
 
 function rpsClicked(e) {

@@ -1,13 +1,16 @@
 <?php
 include "../config/koneksi.php";
 
+
+
 if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
-  header("location: index.php");
+  header("location: ../index.php");
   exit;
 }
 //input data
 if(isset($_POST['submit'])) {
   // Ambil data dari form
+
   $username = $_POST['username'];
   $password = $_POST['password'];
 
@@ -25,15 +28,31 @@ if(isset($_POST['submit'])) {
     // Store data in session variables
     $_SESSION["loggedin"] = true;
     $_SESSION["id"] = $id;
-    $_SESSION["username"] = $username;
+    $_SESSION["username"] = $username;  
+
+    // setcookie('id', $id, time()+60);
+    // setcookie('key', hash('sha256', $username), time()+60);
+
+    $cookie_name = "key";
+    $cookie_value = hash('sha256', $username);
+    setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/"); // 86400 = 1 hari
+    setcookie('username', $username, time() + (86400 * 30), "/"); // 86400 = 1 hari
 
 
-      // Redirect ke halaman home
-      header('Location: ../Main-page/index.php');
+    // Redirect ke halaman home
+    echo "
+    <script>
+    alert('BERHASIL LOGIN!');
+    document.location.href = '../index.php';
+    </script>
+    ";
       exit;
   } else {
-      echo "Nama atau password salah";
+    echo "
+    <script>
+    alert('USERNAME/PASSWORD YANG DIMASUKKAN SALAH!');
+    document.location.href = 'loginPage.php';
+    </script>
+    ";
   }
 }
-?>
-  

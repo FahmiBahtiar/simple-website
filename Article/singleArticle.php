@@ -27,16 +27,14 @@ $comments = $stmt->fetchAll();
 <!-- Custom CSS -->
 <link type="text/css" rel="stylesheet" href="style.css" />
 <link rel="stylesheet" href="single_article.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
 <title>Single Article</title>
 
 </head>
 
 <body>
 
+<?php include "../navbar.php"; ?>
 
     <!-- Main -->
     <main role="main" class="bg-l py-4">
@@ -156,9 +154,9 @@ $comments = $stmt->fetchAll();
                             <div class="card mb-3">
                                 <div class="card-body">
                                     <div class="row">
-                                        <div class="col-md-2 pr-0 text-center">
+                                        <!-- <div class="col-md-2 pr-0 text-center">
                                             <img src="../img/avatar/<?= $comment['comment_avatar'] ?>" class="img img-rounded img-fluid w-50" />
-                                        </div>
+                                        </div> -->
                                         <div class="col-md-10">
                                             <p>
                                                 <a class="float-left" href="#"><strong><?= "User-" . $comment['comment_username'] ?></strong></a>
@@ -177,7 +175,7 @@ $comments = $stmt->fetchAll();
 
                     <div class="post-comments">
 
-                        <form action="assest/insert.php?type=comment&id=<?= $article_id ?>#comment" method="POST">
+                        <form action="insert.php?type=comment&id=<?= $article_id ?>#comment" method="POST">
                             <div class="form-group mt-3">
                                 <input type="hidden" name="username" value="<?= rand() ?>">
                                 <input type="hidden" name="id_article" value="<?= $article_id ?>">

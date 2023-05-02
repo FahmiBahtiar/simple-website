@@ -3,13 +3,15 @@
 
 <?php
 
-session_start();
+if(!isset($_SESSION)) 
+{ 
+    session_start(); 
+} 
 
 // Cek apakah user sudah login atau belum
-if(isset($_SESSION['username'])) {
-    $username = $_SESSION['username'];
+if ((isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) || (isset($_COOKIE['key']))) {
+    $loggedin = true;
 } else {
-    // Jika belum, redirect ke halaman login
     header('Location: ../login-page/loginPage.php');
     exit;
 }
@@ -20,10 +22,10 @@ $authors = $stmt->fetchAll();
 ?>
 
 <title>All Author</title>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"> -->
 
 
 <link type="text/css" rel="stylesheet" href="style.css" />
@@ -38,6 +40,8 @@ $authors = $stmt->fetchAll();
 </head>
 
 <body>
+
+<?php include "../navbar.php"; ?>
 
     <!-- Main -->
     <main role="main" class="main">

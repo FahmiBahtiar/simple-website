@@ -45,19 +45,20 @@ $most_read_articles = $stmt->fetchAll();
 <title>Home</title>
 </head>
 
-<body class="d-flex flex-column min-vh-100">
+<body class="d-flex flex-column min-vh-100 ">
 
+<?php include "../navbar.php"; ?>
 
     <!-- Main -->
-    <main class="main">
+    <main class="main" >
 
         <!-- Jumbotron -->
         <div class="jumbotron text-center p-0 mb-0">
             <div class="bg-div px-5 d-flex align-items-center">
 
-                <div class="text-left w-50">
-                    <h1 class="display-4 text-white">Welcome to Dev Culture!</h1>
-                    <h2 class="display-5 text-white">Discover Dev tutorial and articles that you can read completely for free!</h2>
+                <div class="text-left w-40">
+                    <h1 class="display-4 text-white">Welcome to Article on Game Suit</h1>
+                    <h2 class="display-5 text-white">Discover Games and articles that you can read completely for free!</h2>
 
                 </div>
 
@@ -66,7 +67,7 @@ $most_read_articles = $stmt->fetchAll();
         </div><!-- /Jumbotron -->
 
         <!-- Latest Articles -->
-        <div class="section section-grey">
+        <div class="section section-grey" >
 
             <!-- container -->
             <div class="container">
@@ -96,7 +97,7 @@ $most_read_articles = $stmt->fetchAll();
                                         </span>
                                     </div>
 
-                                    <h3 class="post-title"><a href="singleArticle.php?id=<?= $article['article_id'] ?>"><?= $article['article_title'] ?></a></h3>
+                                    <h3 class="post-title"><a style="color: black;" href="singleArticle.php?id=<?= $article['article_id'] ?>"><?= $article['article_title'] ?></a></h3>
 
                                 </di>
                             </div>
@@ -145,8 +146,8 @@ $most_read_articles = $stmt->fetchAll();
                                                 </span>
                                             </div>
 
-                                            <h3 class="post-title"><a href="singleArticle.php?id=<?= $article['article_id'] ?>"><?= $article['article_title'] ?></a></h3>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...</p>
+                                            <h3 class="post-title"><a style="color: black;" href="singleArticle.php?id=<?= $article['article_id'] ?>"><?= $article['article_title'] ?></a></h3>
+                                            <p class="text-break"><?= strip_tags(substr($article['article_content'], 0, 100)) . "..." ?></p>
                                         </div>
                                     </div>
                                 </div>
@@ -239,7 +240,7 @@ $most_read_articles = $stmt->fetchAll();
                                     <!-- /category -->
                                     <?php foreach ($categories as $category) : ?>
                                         <li>
-                                            <a href="articleOfCategory.php?catID=<?= $category['category_id'] ?>"> <?= $category["category_name"] ?>
+                                            <a style="color: black;" href="articleOfCategory.php?catID=<?= $category['category_id'] ?>"> <?= $category["category_name"] ?>
                                                 <span style="background-color: <?= $category["category_color"] ?>"> <?= $category["article_count"] ?></span>
                                             </a>
                                         </li>

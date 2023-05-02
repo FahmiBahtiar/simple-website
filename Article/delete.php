@@ -8,13 +8,13 @@ $type = $_GET['type'];
 if ($conn) {
     switch ($type) {
         case "article":
-            delete($conn, $type, $id, "listArticle.php");
+            delete($conn, $type, $id, "./Article/listArticle.php");
             break;
         case "category":
-            delete($conn, $type, $id, "listCategories.php");
+            delete($conn, $type, $id, "./Article/listCategories.php");
             break;
         case "author":
-            delete($conn, $type, $id, "listAuthor.php");
+            delete($conn, $type, $id, "./Article/listAuthor.php");
             break;
         default:
             break;

@@ -1,14 +1,14 @@
 <?php
-include "./config/koneksi.php";
+include "../config/koneksi.php";
 
 session_start();
 
 // Cek apakah user sudah login atau belum
-if(isset($_SESSION['username'])) {
-    $username = $_SESSION['username'];
-} else {
+if ((isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) || (isset($_COOKIE['key']))) {
+    $loggedin = true;
+}    else {
     // Jika belum, redirect ke halaman login
-    header('Location: ./Login-page/loginPage.php');
+    header('Location: ../Login-page/loginPage.php');
     exit;
 }
 ?>
@@ -30,8 +30,8 @@ if(isset($_SESSION['username'])) {
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark">
-        <img class="mx-5" src="./images/back.svg" style="cursor: pointer;" alt="Back" onclick="goToHome()">
-        <img src="./images/logo.png" alt="Logo">
+        <img class="mx-5" src="../images/back.svg" style="cursor: pointer;" alt="Back" onclick="goToHome()">
+        <img src="../images/logo.png" alt="Logo">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -58,42 +58,42 @@ if(isset($_SESSION['username'])) {
         </div>
         <div class="row">
             <div class="col-sm">
-                <img src="./images/batu.png" id="player-batu" onclick="rpsClicked('rock')" alt="Batu" class="icon rps img-batu">
+                <img src="../images/batu.png" id="player-batu" onclick="rpsClicked('rock')" alt="Batu" class="icon rps img-batu">
             </div>
             <div class="col-sm">
 
             </div>
             <div class="col-sm">
-                <img src="./images/batu.png" id="enemy-batu" alt="Batu" class="rps img-batu">
+                <img src="../images/batu.png" id="enemy-batu" alt="Batu" class="rps img-batu">
             </div>
         </div>
         <div class="row">
             <div class="col-sm">
-                <img src="./images/kertas.png" id="player-kertas" onclick="rpsClicked('paper')" alt="Kertas" class="icon rps img-kertas">
+                <img src="../images/kertas.png" id="player-kertas" onclick="rpsClicked('paper')" alt="Kertas" class="icon rps img-kertas">
             </div>
             <div class="col-sm" class="result-show">
                 <div id="result" class="vs-text my-5">VS</div>
             </div>
             <div class="col-sm">
-                <img src="./images/kertas.png" id="enemy-kertas" alt="Kertas" class="rps img-kertas">
+                <img src="../images/kertas.png" id="enemy-kertas" alt="Kertas" class="rps img-kertas">
             </div>
         </div>
         <div class="row">
             <div class="col-sm">
-                <img src="./images/gunting.png" id="player-gunting" onclick="rpsClicked('scissors')" alt="Gunting" class="icon rps img-gunting">
+                <img src="../images/gunting.png" id="player-gunting" onclick="rpsClicked('scissors')" alt="Gunting" class="icon rps img-gunting">
             </div>
             <div class="col-sm">
 
             </div>
             <div class="col-sm">
-                <img src="./images/gunting.png" id="enemy-gunting" alt="Gunting" class="rps img-gunting">
+                <img src="../images/gunting.png" id="enemy-gunting" alt="Gunting" class="rps img-gunting">
             </div>
         </div>
         <div class="row mb-5">
             <div class="col-sm">
             </div>
             <div class="col-sm">
-                <img src="./images/refresh.png" onclick="refreshGame()" alt="Refresh" class="icon img-refresh">
+                <img src="../images/refresh.png" onclick="refreshGame()" alt="Refresh" class="icon img-refresh">
             </div>
             <div class="col-sm">
             </div>

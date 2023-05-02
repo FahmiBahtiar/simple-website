@@ -1,5 +1,20 @@
 <!-- Include Head -->
-<?php include "../config/koneksi.php";?>
+<?php include "../config/koneksi.php";
+
+if(!isset($_SESSION)) 
+{ 
+    session_start(); 
+} 
+
+// Cek apakah user sudah login atau belum
+if (isset($_SESSION['username'])) {
+    $username = $_SESSION['username'];
+} else {
+    header('Location: ../login-page/loginPage.php');
+    exit;
+}
+
+?>
 
 <title>Add Author</title>
 </head>

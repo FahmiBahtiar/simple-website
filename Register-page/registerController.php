@@ -23,7 +23,12 @@ if(isset($_POST['submit'])) {
 
     // Jika sudah ada, tampilkan pesan error
     if($stmt->rowCount() > 0) {
-        echo "Username sudah terdaftar. Silakan gunakan username lain.";
+        echo "
+        <script>
+        alert('USERNAME SUDAH TERDAFTAR');
+        document.location.href = 'registerPage.php';
+        </script>
+        ";
     } else {
         // Hash password menggunakan bcrypt
         $hashed_password = password_hash($password, PASSWORD_DEFAULT);
@@ -46,10 +51,20 @@ if(isset($_POST['submit'])) {
         if($stmt->execute()) {
           $_SESSION['username'] = $username;
             // Redirect ke halaman login
-            header('Location: ../Login-page/loginPage.php');
+            echo "
+            <script>
+            alert('BERHASIL REGISTER!');
+            document.location.href = '../Login-page/loginPage.php';
+            </script>
+            ";
             exit;
         } else {
-            echo "Gagal menyimpan data";
+            echo "
+            <script>
+            alert('GAGAL MENYIMPAN DATA');
+            document.location.href = 'registerPage.php';
+            </script>
+            ";
         }
     }
 }
